@@ -1,0 +1,5 @@
+Q:1  Create user 'bob' with 2112 uid and set the password 'trootent
+Ans:
+command:
+-->useradd -u 2112 bob
+-->passwd trootent
