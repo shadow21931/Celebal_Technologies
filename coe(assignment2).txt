@@ -1,0 +1,28 @@
+# Log in as an existing user with sudo privileges
+ssh existing_user@server_ip_address
+
+# Create a new user
+sudo adduser new_username
+
+# Set a password for the new user
+sudo passwd new_username
+
+# Add the new user to the sudo group
+sudo usermod -aG sudo new_username
+
+# Switch to the new user
+su - new_username
+
+# Create an SSH directory
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+
+# Add the public SSH key to the authorized_keys file
+echo "your_public_ssh_key" >> ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+
+# Exit the new user session
+exit
+
+# Log in as the new user
+ssh new_username@server_ip_address
