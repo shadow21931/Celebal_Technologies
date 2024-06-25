@@ -1,0 +1,8 @@
+to change the text color to red:
+echo -e "\e[31mThis text is red\e[0m"
+
+Change Text Color in Shell Prompt Permanently
+
+nano ~/.bashrc
+PS1='\[\e[31m\]\u@\h:\w\$ \[\e[0m\]'
+source ~/.bashrc
