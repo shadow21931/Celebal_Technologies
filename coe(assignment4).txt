@@ -1,0 +1,14 @@
+Task :Change the colour of console
+
+Solution:
+
+**To change the text color, use the following format:
+
+
+--> echo -e "\e[31mThis text is red\e[0m"
+
+
+**To change the background color, use the following format:
+
+
+--> echo -e "\e[41mThis text has a red background\e[0m"
