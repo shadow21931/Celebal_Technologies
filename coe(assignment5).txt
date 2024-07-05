@@ -1,0 +1,28 @@
+Task: Change the password for the root user when root password is not known
+Solution:
+
+Recover Root Password via GRUB Recovery Mode:
+Reboot your machine.
+Access the GRUB menu by holding down the Shift key during boot.
+Highlight the “Advanced options” selection (or the name of your distro).
+Press e to edit the commands.
+Locate the line that begins with linux /boot/vmlinuz....
+Edit this line by replacing the last part (ro quiet splash $vt_handoff) with the following:
+RUN THIS COMMAND
+---> rw init=/bin/bash
+
+Press Ctrl + X or F10 to boot into single-user mode.
+You’ll be in a root shell. Run the following commands:
+--->>  mount -o remount,rw /
+       passwd root
+
+Enter a new root password when prompted.
+Reboot your system normally.
+Change Root Password Directly:
+Open a terminal.
+Execute the following command:
+-->>  sudo passwd root
+
+Enter your login password.
+Enter a new root password when prompted.
+Remember to replace root with the actual username if you’re changing the password for a different user
